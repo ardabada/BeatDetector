@@ -1,0 +1,26 @@
+﻿<Window x:Class="BeatDetectorHost.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BeatDetectorHost" ResizeMode="NoResize"
+        mc:Ignorable="d" FontSize="14" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing">
+    <Grid>
+        <local:MasterPeakDrawer x:Name="masterPeak" HorizontalAlignment="Center" OnManualPeakChanged="masterPeak_OnManualPeakChanged" Height="35" Width="400" VerticalAlignment="Top"  Margin="0,100,0,0" />
+        <RadioButton Name="outputDeviceRadioButton" Content="Listen to output device" GroupName="deviceType" IsChecked="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,14,0,0" Checked="deviceRadioButton_CheckedChanged" Unchecked="deviceRadioButton_CheckedChanged"/>
+        <RadioButton Name="inputDeviceRadioButton" Content="Listen to input device" GroupName="deviceType" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,43,0,0"  Checked="deviceRadioButton_CheckedChanged" Unchecked="deviceRadioButton_CheckedChanged"/>
+        <ComboBox Name="outputDevicesCombobox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Margin="356,12,0,0" SelectionChanged="devicesCombobox_SelectionChanged"/>
+        <TextBlock Text="Output devices:" HorizontalAlignment="Left" Margin="245,14,0,0" VerticalAlignment="Top"/>
+        <TextBlock Text="Input devices:" HorizontalAlignment="Left" Margin="245,43,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="inputDevicesCombobox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Margin="356,42,0,0" SelectionChanged="devicesCombobox_SelectionChanged"/>
+        <Slider Name="silenceLevelSlider" ValueChanged="silenceLevelSlider_ValueChanged" Minimum="0" SmallChange="0.05" LargeChange="0.1" Maximum="1" Value="0.1" HorizontalAlignment="Center" Margin="103,151,391,0" VerticalAlignment="Top" Width="300"/>
+        <TextBlock Text="Silence level:" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="manualPeekLevelCheckbox" Content="Manual peak level" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top" Checked="manualPeekLevelCheckbox_CheckedChanged" Unchecked="manualPeekLevelCheckbox_CheckedChanged"/>
+        <TextBlock Name="silenceLevelLbl" Text="0" HorizontalAlignment="Left" Margin="408,152,0,0" VerticalAlignment="Top"/>
+        <Button Name="overlayBtn" Content="Full screen overlay&#xD;&#xA;(recommended)" TextBlock.TextAlignment="Center" HorizontalAlignment="Left" Height="58" Margin="197,217,0,0" VerticalAlignment="Top" Width="175" FontWeight="Bold" Foreground="#FF31973F" Click="overlayBtn_Click"/>
+        <Button Name="windowBtn" Content="Window overlay&#xD;&#xA;(bad look)"  TextBlock.TextAlignment="Center" HorizontalAlignment="Left" Height="58" Margin="10,217,0,0" VerticalAlignment="Top" Width="175" FontWeight="Bold" Foreground="Black" Click="windowBtn_Click"/>
+        <Button Name="closeBtn" Content="Force close" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top" Width="362" Click="closeBtn_Click" />
+        <CheckBox Name="debugCheckbox" IsChecked="True" Content="Show information" HorizontalAlignment="Left" Margin="197,180,0,0" VerticalAlignment="Top" Checked="debugCheckbox_CheckedChanged" Unchecked="debugCheckbox_CheckedChanged"/>
+    </Grid>
+</Window>

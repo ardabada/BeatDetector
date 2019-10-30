@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="BeatDetectorHost.MasterPeakDrawer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BeatDetectorHost" MouseLeftButtonDown="UserControl_MouseLeftButtonDown" MouseMove="UserControl_MouseMove"
+             mc:Ignorable="d" Height="35" Width="400" Background="#ecf0f1" BorderBrush="#34495e" BorderThickness="2">
+    <Grid Name="innerGrid">
+        <Grid Name="peakGrid" HorizontalAlignment="Left" Width="0" VerticalAlignment="Stretch" Background="#3498db"></Grid>
+        <Grid Name="averagePeakGrid" Visibility="Visible" Width="4" VerticalAlignment="Stretch" HorizontalAlignment="Left" Background="#c0392b" Margin="0,0,0,0"></Grid>
+        <Grid Name="peakManualGreed" Visibility="Hidden" Width="4" VerticalAlignment="Stretch" HorizontalAlignment="Left" Background="#f39c12" Margin="0,0,0,0"></Grid>
+        <Grid Name="silenceArea" HorizontalAlignment="Left" VerticalAlignment="Stretch" Background="#2c3e50" Width="0" Opacity="0.7"></Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,13 @@
+﻿<Window x:Class="BeatDetectorHost.OverlayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BeatDetectorHost" KeyDown="Window_KeyDown" Opacity="1"
+        mc:Ignorable="d" AllowsTransparency="True" WindowStyle="None" Topmost="True" WindowStartupLocation="CenterScreen" WindowState="Maximized" Cursor="None"
+        Title="OverlayWindow" Height="450" Width="800"  Background="#000000" Closing="Window_Closing">
+    <Grid Name="mainGrid">
+        <Grid Background="Black" Opacity="1" Name="blackGrid"></Grid>
+        <TextBlock Name="infoLbl" Visibility="Hidden" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Text="DEBUG" Background="White" Foreground="Black" FontWeight="Bold"></TextBlock>
+    </Grid>
+</Window>
